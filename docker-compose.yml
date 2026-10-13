@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: daily-edit-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-bloglocal}
+      MYSQL_DATABASE: blogdb
+      MYSQL_USER: ${DB_USERNAME:-blog_app}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-bloglocal}
+    ports:
+      - "3306:3306"
+    volumes:
+      - blog-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD:-bloglocal}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  blog-mysql-data:

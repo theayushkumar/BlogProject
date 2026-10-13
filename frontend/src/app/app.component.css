@@ -1,0 +1,7 @@
+.site-header{height:82px;padding:0 max(7vw,24px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:var(--paper)}
+.brand{font-family:var(--serif);font-size:25px;letter-spacing:-1px;font-weight:700}.brand span{color:var(--rust)}
+nav{display:flex;gap:32px;align-items:center;font-size:13px;font-weight:600}
+nav a,.nav-button{color:var(--ink);text-decoration:none}.nav-button{border:0;background:none;font:inherit;cursor:pointer}.admin-link{color:var(--rust)}
+main{min-height:calc(100vh - 150px)}
+.site-footer{border-top:1px solid var(--line);padding:28px 7vw;color:var(--muted);font:italic 15px var(--serif);text-align:center}
+@media(max-width:600px){.site-header{height:70px;padding:0 20px}.brand{font-size:21px}nav{gap:16px;font-size:12px}}
